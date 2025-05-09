@@ -38,7 +38,7 @@ bool so_hoan_hao(ll n)
 
 int main()
 {
-    int n;
+    ll n;
     cin >> n;
 
     time_t start, end;
