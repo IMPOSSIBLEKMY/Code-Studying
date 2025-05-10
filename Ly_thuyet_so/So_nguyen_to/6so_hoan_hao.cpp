@@ -4,6 +4,8 @@
 using namespace std;
 
 bool so_hoan_hao(ll n)
+//! the slow way to find perfect number
+//? perfect number
 {
     if (n <= 5)
     {

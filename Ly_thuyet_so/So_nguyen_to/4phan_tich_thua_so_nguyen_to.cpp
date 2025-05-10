@@ -6,8 +6,9 @@ using namespace std;
 //! max cua long long:                    9223372036854775807 = 2^63 - 1
 
 void phan_tich_thua_so_nguyen_to_1(ll n)
-//?liet ke thua so nguyen to theo dang 90 => 2 3 3 5
-//?liet ke thua so nguyen to theo dang 70 => 7 11
+//? prime factorization
+//? liet ke thua so nguyen to theo dang 90 => 2 3 3 5
+//? liet ke thua so nguyen to theo dang 70 => 7 11
 {
     if (n < 2)
     {
@@ -42,8 +43,8 @@ void phan_tich_thua_so_nguyen_to_1(ll n)
 }
 
 void phan_tich_thua_so_nguyen_to_2(ll n)
-//?liet ke thua so nguyen to theo dang 90 => 2^1 * 3^2 * 5^1
-//?liet ke thua so nguyen to theo dang 70 => 7^1 * 11^1
+//? liet ke thua so nguyen to theo dang 90 => 2^1 * 3^2 * 5^1
+//? liet ke thua so nguyen to theo dang 70 => 7^1 * 11^1
 {
     if (n < 2)
     {
