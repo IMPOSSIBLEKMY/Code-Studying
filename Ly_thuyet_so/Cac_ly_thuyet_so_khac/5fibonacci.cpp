@@ -15,12 +15,12 @@ bool check_fibonacci(ll n)
         return 0;
     }
 
-    if (n == a)
+    if (n == 0)
     {
         return 1;
     }
 
-    if (n == b)
+    if (n == 1)
     {
         return 1;
     }
