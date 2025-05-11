@@ -3,36 +3,6 @@
 
 using namespace std;
 
-ll uoc_chung_lon_nhat_2(ll a, ll b)
-//! the fast way to find greatest common divisor
-{
-    if (a < 0 || b < 0)
-    {
-        return 0;
-    }
-
-    if (a < b)
-    {
-        ll temp = a;
-        a = b;
-        b = temp;
-    }
-
-    if (b == 0)
-    {
-        return a;
-    }
-
-    while (b != 0)
-    {
-        ll temp = a;
-        a = b;
-        b = temp % b;
-    }
-
-    return a;
-}
-
 ll boi_chung_nho_nhat_1(ll a, ll b)
 //! the slow way to find least common multiple
 //? using prime factorization the bigger number between a and b
@@ -80,6 +50,36 @@ ll boi_chung_nho_nhat_1(ll a, ll b)
     tich *= a * b;
 
     return tich;
+}
+
+ll uoc_chung_lon_nhat_2(ll a, ll b)
+//! the fast way to find greatest common divisor
+{
+    if (a < 0 || b < 0)
+    {
+        return 0;
+    }
+
+    if (a < b)
+    {
+        ll temp = a;
+        a = b;
+        b = temp;
+    }
+
+    if (b == 0)
+    {
+        return a;
+    }
+
+    while (b != 0)
+    {
+        ll temp = a;
+        a = b;
+        b = temp % b;
+    }
+
+    return a;
 }
 
 ll boi_chung_nho_nhat_2(ll a, ll b)
