@@ -2,7 +2,7 @@
 #define ll long long
 
 using namespace std;
-
+//! 9223372036854775807 = 7^2 * 73^1 * 127^1 * 337^1 * 92737^1 * 649657^1
 //! max cua long long:                    9223372036854775807 = 2^63 - 1
 
 void phan_tich_thua_so_nguyen_to_1(ll n)
