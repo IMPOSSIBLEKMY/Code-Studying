@@ -24,6 +24,7 @@ bool so_nguyen_to(ll n)
     }
 
     ll i = 3;
+    //! bắt đầu kiểm tra từ 3 đến các số lẻ khác nhỏ hon căn n VD: 3 5 7 9 11 ...
 
     while (i * i <= n)
     {

@@ -4,8 +4,8 @@
 using namespace std;
 
 ll boi_chung_nho_nhat_1(ll a, ll b)
-//! the slow way to find least common multiple
-//? using prime factorization the bigger number between a and b
+//! The slow way to find least common multiple
+//! Using prime factorization the bigger number between a and b
 {
     if (a < 0 || b < 0)
     {
@@ -52,8 +52,16 @@ ll boi_chung_nho_nhat_1(ll a, ll b)
     return tich;
 }
 
+ll uoc_chung_lon_nhat_2(ll a, ll b);
+
+ll boi_chung_nho_nhat_2(ll a, ll b)
+//! The fast way to find least common multiple
+{
+    return (a * b) / uoc_chung_lon_nhat_2(a, b);
+}
+
 ll uoc_chung_lon_nhat_2(ll a, ll b)
-//! the fast way to find greatest common divisor
+//! The fast way to find greatest common divisor
 {
     if (a < 0 || b < 0)
     {
@@ -80,12 +88,6 @@ ll uoc_chung_lon_nhat_2(ll a, ll b)
     }
 
     return a;
-}
-
-ll boi_chung_nho_nhat_2(ll a, ll b)
-//! the fast way to find least common multiple
-{
-    return (a * b) / uoc_chung_lon_nhat_2(a, b);
 }
 
 int main()

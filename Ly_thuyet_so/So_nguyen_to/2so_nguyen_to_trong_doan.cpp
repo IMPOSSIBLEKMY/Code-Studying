@@ -6,37 +6,7 @@ using namespace std;
 //! so nguyen to lon nhat theo long long: 9181531581341931811
 //! max cua long long:                    9223372036854775807 = 2^63 - 1
 
-bool so_nguyen_to(ll n)
-{
-    if (n <= 1)
-    {
-        return 0;
-    }
-
-    if (n == 2)
-    {
-        return 1;
-    }
-
-    if (n % 2 == 0)
-    {
-        return 0;
-    }
-
-    ll i = 3;
-
-    while (i * i <= n)
-    {
-        if (n % i == 0)
-        {
-            return 0;
-        }
-
-        i += 2;
-    }
-
-    return 1;
-}
+bool so_nguyen_to(ll n);
 
 void so_nguyen_to_trong_doan(ll a, ll b)
 {
@@ -80,6 +50,38 @@ void so_nguyen_to_trong_doan(ll a, ll b)
 
         i += 2;
     }
+}
+
+bool so_nguyen_to(ll n)
+{
+    if (n <= 1)
+    {
+        return 0;
+    }
+
+    if (n == 2)
+    {
+        return 1;
+    }
+
+    if (n % 2 == 0)
+    {
+        return 0;
+    }
+
+    ll i = 3;
+
+    while (i * i <= n)
+    {
+        if (n % i == 0)
+        {
+            return 0;
+        }
+
+        i += 2;
+    }
+
+    return 1;
 }
 
 int main()

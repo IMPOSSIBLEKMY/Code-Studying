@@ -3,8 +3,8 @@
 
 using namespace std;
 
-//! so thuan_nghich lon nhat theo long long: 9223372036302733229
-//! max cua long long:                       9223372036854775807 = 2^63 - 1
+//! The largest palindromic number in `long long` range: 9223372036302733229
+//! The maximum value of `long long`:                    9223372036854775807 = 2^63 - 1
 
 bool so_thuan_nghich(ll n)
 {

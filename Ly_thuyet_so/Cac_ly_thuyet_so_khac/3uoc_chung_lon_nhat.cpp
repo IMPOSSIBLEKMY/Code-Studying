@@ -4,7 +4,9 @@
 using namespace std;
 
 ll uoc_chung_lon_nhat_1(ll a, ll b)
-//! the slow way to find greatest common divisor
+//! The slow way to find the greatest common divisor
+//! 1. Choose the smaller number between a and b, set i = smaller number
+//! 2. Continue dividing a and b by i until finding a number i that is divisible by both a and b
 {
     if (a < 0 || b < 0)
     {
@@ -40,6 +42,7 @@ ll uoc_chung_lon_nhat_1(ll a, ll b)
 
 ll uoc_chung_lon_nhat_2(ll a, ll b)
 //! the fast way to find greatest common divisor
+//! Euclidean Algorithm: https://www.freecodecamp.org/news/euclidian-gcd-algorithm-greatest-common-divisor/
 {
     if (a < 0 || b < 0)
     {
