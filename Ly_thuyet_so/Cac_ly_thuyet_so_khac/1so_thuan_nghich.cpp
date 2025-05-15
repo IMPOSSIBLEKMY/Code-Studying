@@ -1,12 +1,15 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
 
-//! The largest palindromic number in `long long` range: 9223372036302733229
-//! The maximum value of `long long`:                    9223372036854775807 = 2^63 - 1
+//! Số thuận nghịch lớn nhất theo long long:    9223372036302733229
 
 bool so_thuan_nghich(ll n)
+//! Palindromic number
+//! Thời gian giải thuật: O(log(n))
+//! 1. Lấy kết quả từng hàng đơn vị theo n % 10
+//! 2. Nghịch đảo của số bằng chính nó theo công thức: tong = tong * 10 + n % 10
 {
     ll n1 = n;
     ll tong = 0;

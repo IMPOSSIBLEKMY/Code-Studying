@@ -1,13 +1,12 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
 
-//! so chinh phuong lon nhat theo long long: 9223372030926249001 = 3037000499^2
-//! max cua long long:                       9223372036854775807 = 2^63 - 1
+//! Số chính phương lớn nhất theo long long: 9223372030926249001 = 3037000499^2
 
 ll can_bac_hai_lam_tron_xuong(ll n)
-//? cong thuc Newton (Newton's method) cho ham so x^2 - n = 0 (can bac hai cua n)
+//! Công thức Newton (Newton's method) cho hàm số x^2−n=0 (căn bậc hai của n).
 {
     if (n <= 0)
     {
@@ -19,7 +18,8 @@ ll can_bac_hai_lam_tron_xuong(ll n)
         return 1;
     }
 
-    //? a * b * c la so gan nhat khi can bac hai cua so bat ki
+    //? a*b*c là số nguyên gần nhất khi khai căn bậc hai của một số bất kỳ
+    //? VD: căn 9000 gần bằng căn 9 * căn 10 * căn 100 và nó gần bằng 3 * 3 * 10
     int a = 1;
     int dem = 0;
     ll n1 = n;
@@ -63,7 +63,7 @@ ll can_bac_hai_lam_tron_xuong(ll n)
     ll root2 = (root1 + (n / root1)) / 2;
 
     while (root1 - root2 > 1)
-    //? neu 2 kq lam tron xuong sai lech 1 don vi thi cho ra kq nho hon
+    //? Nếu 2 kết quả làm tròn xuống sai lệch 1 đơn vị thì cho ra kết quả nhỏ hơn
     {
         root1 = root2;
 
@@ -93,17 +93,20 @@ void so_chinh_phuong_trong_doan(ll a, ll b)
         return;
     }
 
-    //? co the dung ham sqrt() cung duoc nhung no khong nhanh bang Newton method
-    //? ll i = can_bac_hai_lam_tron_xuong(a);
+    //? Có thể dùng hàm sqrt() cũng được, nhưng nó không nhanh bằng Newton's method
+    //? ll i = sqrt(a);
+    //? ll can_b = sqrt(b);
 
     ll i = can_bac_hai_lam_tron_xuong(a);
+    ll can_b = can_bac_hai_lam_tron_xuong(b);
 
     if (i * i < a)
     {
         i++;
     }
 
-    while (i * i <= b)
+    while (i <= can_b)
+    //! nếu dùng i * i thì sẽ gặp trường hợp tràn số long long nên dùng cách i <= can_b
     {
         cout << i * i << " ";
         i++;

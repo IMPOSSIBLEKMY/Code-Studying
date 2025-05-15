@@ -1,12 +1,13 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
 
-//! so nguyen to lon nhat theo long long: 9181531581341931811
-//! max cua long long:                    9223372036854775807 = 2^63 - 1
+//! Số nguyên tố lớn nhất theo long long: 9181531581341931811
 
 bool so_nguyen_to(ll n)
+//! Thời gian giải thuật: O(sqrt(n)/2)
+//! Bắt đầu kiểm tra từ 3 đến các số lẻ khác nhỏ hơn căn n VD: 3 5 7 9 11 ...
 {
     if (n <= 1)
     {
@@ -24,7 +25,6 @@ bool so_nguyen_to(ll n)
     }
 
     ll i = 3;
-    //! bắt đầu kiểm tra từ 3 đến các số lẻ khác nhỏ hon căn n VD: 3 5 7 9 11 ...
 
     while (i * i <= n)
     {

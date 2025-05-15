@@ -1,12 +1,13 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
 
 ll uoc_chung_lon_nhat_1(ll a, ll b)
-//! The slow way to find the greatest common divisor
-//! 1. Choose the smaller number between a and b, set i = smaller number
-//! 2. Continue dividing a and b by i until finding a number i that is divisible by both a and b
+//! Slow greatest common divisor
+//! Thời gian giải thuật: O(min(a,b))
+//! 1. Chọn số nhỏ nhất giữa a và b, đặt i với số nhỏ nhất
+//! 2. Tiếp tục chia lần lượt a và b cho i giảm dần cho đến khi ra kết quả cuối cùng.
 {
     if (a < 0 || b < 0)
     {
@@ -41,7 +42,9 @@ ll uoc_chung_lon_nhat_1(ll a, ll b)
 }
 
 ll uoc_chung_lon_nhat_2(ll a, ll b)
-//! the fast way to find greatest common divisor
+//! Fast greatest common divisor
+//! Thời gian giải thuật: O(log(min(a,b)))
+//! Chọn số nhỏ nhất giữa a và b, lấy số đó chia dư cho số lớn hơn và làm theo giải thuật Euclidean
 //! Euclidean Algorithm: https://www.freecodecamp.org/news/euclidian-gcd-algorithm-greatest-common-divisor/
 {
     if (a < 0 || b < 0)

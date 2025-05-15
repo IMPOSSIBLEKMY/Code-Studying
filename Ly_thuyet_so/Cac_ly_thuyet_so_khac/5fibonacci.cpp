@@ -1,10 +1,9 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
 
 //! so fibonacci lon nhat theo long long: 7540113804746346429 (so thu 93)
-//! max cua long long:                    9223372036854775807 = 2^63 - 1
 
 bool check_fibonacci(ll n)
 {

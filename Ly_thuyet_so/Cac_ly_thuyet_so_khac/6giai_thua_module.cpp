@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
 
@@ -7,15 +7,15 @@ using namespace std;
 //? https://stackoverflow.com/questions/9727962/fast-way-to-calculate-n-mod-m-where-m-is-prime
 //? https://cs.stackexchange.com/questions/1495/what-is-the-most-efficient-way-to-compute-factorials-modulo-a-prime
 
-//! Bài toán dừng lại ở việc n! mod k với k <= 1000000007
-//! The maximum value of `long long`:          9223372036854775807 = 2^63 - 1
+//! Bài toán n! mod k với k <= 1000000007, n thuộc khoảng long long
 
-ll nhan_module(ll a, ll b, ll k)
+ll nhan_dong_du(ll a, ll b, ll k)
+//! Modular multiplication
 {
     return (1ll * (a % k) * (b % k)) % k;
 }
 
-ll giai_thua_module(ll n, int k)
+ll giai_thua_chia_du_k(ll n, int k)
 {
     if (n < 0 || k <= 0)
     {
@@ -24,7 +24,7 @@ ll giai_thua_module(ll n, int k)
 
     if (k > 1000000007)
     {
-        cout << "We haven't done it yet, i'm so sorry bro." << endl;
+        cout << "Out of range" << endl;
         return -1;
     }
 
@@ -47,7 +47,7 @@ ll giai_thua_module(ll n, int k)
 
     while (n - 1 >= 1)
     {
-        kq = nhan_module(kq, n - 1, k);
+        kq = nhan_dong_du(kq, n - 1, k);
 
         if (kq == 0)
         {
@@ -69,7 +69,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << giai_thua_module(n, k) << endl;
+    cout << giai_thua_chia_du_k(n, k) << endl;
 
     time(&end);
     double time_taken = double(end - start);

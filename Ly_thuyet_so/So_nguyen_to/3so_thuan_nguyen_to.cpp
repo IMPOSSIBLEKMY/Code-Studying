@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
 
-//! so thuan nguyen to lon nhat theo long long: 7777777777777777577
-//! max cua long long:                          9223372036854775807 = 2^63 - 1
+//! Số thuần nguyên tố lớn nhất theo long long: 7777777777777777577
 
 bool so_thuan_nguyen_to(ll n)
+//! Cách tăng tốc độ xét:
+//! 1.Xét nguyên tố từng đơn vị của số rồi tính tổng đơn vị.
+//! 2.Cuối cùng xét nguyên tố cho số tổng đó và cả số n.
 {
     if (n <= 1)
     {

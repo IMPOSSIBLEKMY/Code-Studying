@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
 
 using namespace std;
-//! 9223372036854775807 = 7^2 * 73^1 * 127^1 * 337^1 * 92737^1 * 649657^1
-//! max cua long long:                    9223372036854775807 = 2^63 - 1
+
+//! Phân tích thừa số nguyên tố lớn nhất theo long long: 9223372036854775807 = 7^2 * 73^1 * 127^1 * 337^1 * 92737^1 * 649657^1
 
 void phan_tich_thua_so_nguyen_to_1(ll n)
-//? prime factorization
-//? liet ke thua so nguyen to theo dang 90 => 2 3 3 5
-//? liet ke thua so nguyen to theo dang 70 => 7 11
+//! Prime factorization
+//! Thời gian giải thuật: O(sqrt(n)/2)
+//? Liệt kê thừa số nguyên tố theo dạng 90 => 2 3 3 5
+//? Liệt kê thừa số nguyên tố theo dạng 70 => 7 11
 {
     if (n < 2)
     {
@@ -38,13 +39,13 @@ void phan_tich_thua_so_nguyen_to_1(ll n)
         }
     }
 
-    // so nguyen to cuoi cung
+    //! Liệt kê ra thừa số cuối cùng
     cout << n << " ";
 }
 
 void phan_tich_thua_so_nguyen_to_2(ll n)
-//? liet ke thua so nguyen to theo dang 90 => 2^1 * 3^2 * 5^1
-//? liet ke thua so nguyen to theo dang 70 => 7^1 * 11^1
+//? Liệt kê thừa số nguyên tố theo dạng 90 => 2^1 * 3^2 * 5^1
+//? Liệt kê thừa số nguyên tố theo dạng 70 => 7^1 * 11^1
 {
     if (n < 2)
     {
@@ -80,7 +81,7 @@ void phan_tich_thua_so_nguyen_to_2(ll n)
         }
     }
 
-    // so nguyen to cuoi cung
+    //! Liệt kê ra thừa số cuối cùng
     dem++;
     cout << n << "^" << dem << " ";
 }
