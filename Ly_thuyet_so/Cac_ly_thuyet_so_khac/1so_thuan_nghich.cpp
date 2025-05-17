@@ -1,45 +1,50 @@
 #include <bits/stdc++.h>
-
-#define ll long long
-
 using namespace std;
 
-bool so_thuan_nghich(ll n)
+// @ Long long có giới hạn từ -9223372036854775808 -> 9223372036854775807
+#define ll long long
+
+// ! Kiểm tra số thuận nghịch - đúng hay sai
+
+// # ĐN         : Số đọc từ trái sang phải hay từ phải sang trái đều giống nhau
+// # VD         : 0, 3, 121, 1331, 9223372036302733229
+// # Độ phức tạp: O(log10(n))
+
+// $ 1. Không xét số âm
+// $ 2. Ý tưởng đảo ngược số:
+// $        VD: 357 => 0*10 + 7  = 7
+// $                => 7*10 + 5  = 75
+// $                => 75*10 + 3 = 753
+
+bool isPalindromicNumber(ll num)
 {
-    if (n < 0)
+    if (num < 0)
     {
-        return 0;
+        return false;
     }
 
-    ll n1 = n;
-    ll tong = 0;
+    ll copyNum = num;
 
-    while (n)
+    ll reversedNum = 0;
+    while (num > 0)
     {
-        tong = tong * 10 + n % 10;
-        n /= 10;
+        reversedNum = reversedNum * 10 + num % 10;
+        num /= 10;
     }
 
-    if (tong == n1)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    return (reversedNum == copyNum);
 }
 
 int main()
 {
-    ll n;
-    cin >> n;
+    ll num;
+    cin >> num;
 
     time_t start, end;
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    if (so_thuan_nghich(n))
+    if (isPalindromicNumber(num))
     {
         cout << "YES" << endl;
     }
