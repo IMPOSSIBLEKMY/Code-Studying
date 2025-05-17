@@ -6,6 +6,11 @@ using namespace std;
 
 bool so_thuan_nghich(ll n)
 {
+    if (n < 0)
+    {
+        return 0;
+    }
+
     ll n1 = n;
     ll tong = 0;
 
