@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
-#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
+#define ll long long
 
 using namespace std;
-
-//! so fibonacci lon nhat theo long long: 7540113804746346429 (so thu 93)
 
 bool check_fibonacci(ll n)
 {
@@ -27,8 +25,6 @@ bool check_fibonacci(ll n)
     int i = 3;
 
     while (i <= 93)
-    //! khong the xet dieu kien c < n, boi vi fibonacci tang nhanh, dan den viec tran so long long
-    //! chi xet trong dieu kien 3 <= i <= 93
     {
         c = a + b;
         a = b;
@@ -47,7 +43,6 @@ bool check_fibonacci(ll n)
         i++;
     }
 
-    //! gia tri n vuot qua so fibonacci thu 93
     return 0;
 }
 

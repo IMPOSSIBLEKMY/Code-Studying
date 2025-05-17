@@ -1,15 +1,9 @@
 #include <bits/stdc++.h>
-#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
+#define ll long long
 
 using namespace std;
 
-//! Phân tích thừa số nguyên tố lớn nhất theo long long: 9223372036854775807 = 7^2 * 73^1 * 127^1 * 337^1 * 92737^1 * 649657^1
-
 void phan_tich_thua_so_nguyen_to_1(ll n)
-//! Prime factorization
-//! Thời gian giải thuật: O(sqrt(n)/2)
-//? Liệt kê thừa số nguyên tố theo dạng 90 => 2 3 3 5
-//? Liệt kê thừa số nguyên tố theo dạng 70 => 7 11
 {
     if (n < 2)
     {
@@ -39,13 +33,10 @@ void phan_tich_thua_so_nguyen_to_1(ll n)
         }
     }
 
-    //! Liệt kê ra thừa số cuối cùng
     cout << n << " ";
 }
 
 void phan_tich_thua_so_nguyen_to_2(ll n)
-//? Liệt kê thừa số nguyên tố theo dạng 90 => 2^1 * 3^2 * 5^1
-//? Liệt kê thừa số nguyên tố theo dạng 70 => 7^1 * 11^1
 {
     if (n < 2)
     {
@@ -81,7 +72,6 @@ void phan_tich_thua_so_nguyen_to_2(ll n)
         }
     }
 
-    //! Liệt kê ra thừa số cuối cùng
     dem++;
     cout << n << "^" << dem << " ";
 }

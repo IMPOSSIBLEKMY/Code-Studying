@@ -1,12 +1,9 @@
 #include <bits/stdc++.h>
-#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
+#define ll long long
 
 using namespace std;
 
 ll to_hop_chap_k_cua_n(int n, int k)
-//! Combination
-//! Thời gian giải thuật: O(k)
-//! nCk = (n(n-1)...(n-k+1))/(k!)
 {
     if (k > n || n < 0 || k < 0)
     {

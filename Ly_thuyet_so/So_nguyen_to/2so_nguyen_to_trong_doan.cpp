@@ -1,13 +1,9 @@
 #include <bits/stdc++.h>
-#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
+#define ll long long
 
 using namespace std;
 
-//! Số nguyên tố lớn nhất theo long long: 9181531581341931811
-
 bool so_nguyen_to(ll n)
-//! thời gian giải thuật: O(sqrt(n)/2)
-//! bắt đầu kiểm tra từ 3 đến các số lẻ khác nhỏ hơn căn n VD: 3 5 7 9 11 ...
 {
     if (n <= 1)
     {

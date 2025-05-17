@@ -1,11 +1,9 @@
 #include <bits/stdc++.h>
-#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
+#define ll long long
 
 using namespace std;
 
 bool so_hoan_hao(ll n)
-//! the slow way to find perfect number
-//? perfect number
 {
     if (n <= 5)
     {
@@ -25,6 +23,7 @@ bool so_hoan_hao(ll n)
                 tong += n / i;
             }
         }
+
         i++;
     }
 
@@ -58,8 +57,7 @@ int main()
 
     time(&end);
     double time_taken = double(end - start);
-    cout << "Time taken by program is : " << fixed
-         << time_taken << setprecision(5);
+    cout << "Time taken by program is : " << fixed << time_taken << setprecision(5);
     cout << " sec " << endl;
 
     return 0;

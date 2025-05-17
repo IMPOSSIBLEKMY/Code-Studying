@@ -1,10 +1,7 @@
 #include <bits/stdc++.h>
-#define ll long long //? -9223372036854775808 <= x <= 9223372036854775807
+#define ll long long
 
 using namespace std;
-
-//! Goldbach Conjecture la so chan >= 4 phan tich thanh tong cua 2 so nguyen to
-//! so Goldbach Conjecture lon nhat theo long long: 9181531581341931814 = 3 + 9181531581341931811
 
 void goldbach_conjecture(ll n)
 {
