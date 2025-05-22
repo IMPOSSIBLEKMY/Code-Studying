@@ -4,35 +4,35 @@ using namespace std;
 // @ Long long có giới hạn từ -9223372036854775808 -> 9223372036854775807
 #define ll long long
 
-bool isPalindromicNumber(ll num)
+bool isPalindromicNumber(ll number)
 {
-    if (num < 0)
+    if (number < 0)
     {
         return false;
     }
 
-    ll copyNum = num;
+    ll copyNumber = number;
 
-    ll reversedNum = 0;
-    while (num > 0)
+    ll reversednumber = 0;
+    while (number > 0)
     {
-        reversedNum = reversedNum * 10 + num % 10;
-        num /= 10;
+        reversednumber = reversednumber * 10 + number % 10;
+        number /= 10;
     }
 
-    return (reversedNum == copyNum);
+    return (reversednumber == copyNumber);
 }
 
 int main()
 {
-    ll num;
-    cin >> num;
+    ll number;
+    cin >> number;
 
     time_t start, end;
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    if (isPalindromicNumber(num))
+    if (isPalindromicNumber(number))
     {
         cout << "YES" << endl;
     }
