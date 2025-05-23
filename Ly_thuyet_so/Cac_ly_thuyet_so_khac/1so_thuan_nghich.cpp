@@ -1,9 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// @ Long long có giới hạn từ -9223372036854775808 -> 9223372036854775807
+//# Long long có giới hạn từ -9223372036854775808 -> 9223372036854775807
 #define ll long long
 
+//! Số thuận nghịch
+//& Định nghĩa  : Số có đơn vị đọc từ trái qua phải hay phải qua trái đều giống nhau
+//& Ví dụ       : 0, 1331, 1234321, 3, 9223372036302733229
+//& Độ phức tạp : O(k) (k là số đơn vị của một số bất kì)
 bool isPalindromicNumber(ll number)
 {
     if (number < 0)
@@ -11,7 +15,7 @@ bool isPalindromicNumber(ll number)
         return false;
     }
 
-    ll copyNumber = number;
+    ll originalNumber = number;
 
     ll reversednumber = 0;
     while (number > 0)
@@ -20,7 +24,7 @@ bool isPalindromicNumber(ll number)
         number /= 10;
     }
 
-    return (reversednumber == copyNumber);
+    return (reversednumber == originalNumber);
 }
 
 int main()

@@ -11,15 +11,15 @@ bool so_hoan_hao(ll n)
         return 0;
     }
 
-    ll i = 1;
-    ll tong = 0;
+    ll i = 2;
+    ll tong = 1;
 
     while (i * i <= n)
     {
         if (n % i == 0)
         {
             tong += i;
-            if (n / i != i && i != 1)
+            if (n / i != i)
             {
                 tong += n / i;
             }
