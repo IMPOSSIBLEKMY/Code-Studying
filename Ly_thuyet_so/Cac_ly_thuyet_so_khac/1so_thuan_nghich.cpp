@@ -8,6 +8,7 @@ using namespace std;
 //& Định nghĩa  : Số có đơn vị đọc từ trái qua phải hay phải qua trái đều giống nhau
 //& Ví dụ       : 0, 1331, 1234321, 3, 9223372036302733229
 //& Độ phức tạp : O(k) (k là số đơn vị của một số bất kì)
+
 bool isPalindromicNumber(ll number)
 {
     if (number < 0)

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool check_fibonacci(ll n)
+bool isFibonacci(ll n)
 {
     ll a = 0, b = 1, c;
 
@@ -47,7 +47,7 @@ bool check_fibonacci(ll n)
     return 0;
 }
 
-ll so_fibonacci_thu_n(int n)
+ll findNthFibonacci(int n)
 {
     ll a = 0, b = 1, c;
 
@@ -87,7 +87,7 @@ ll so_fibonacci_thu_n(int n)
     return c;
 }
 
-void n_so_fibonacci(int n)
+void printNumbersOfFibonacci(int n)
 {
     ll a = 0, b = 1, c;
 
@@ -142,7 +142,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    n_so_fibonacci(n);
+    printNumbersOfFibonacci(n);
 
     time(&end);
     double time_taken = double(end - start);

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ll boi_chung_nho_nhat_1(ll a, ll b)
+ll findLeastCommonMultiple(ll a, ll b)
 {
     if (a < 0 || b < 0)
     {
@@ -51,7 +51,7 @@ ll boi_chung_nho_nhat_1(ll a, ll b)
     return tich;
 }
 
-ll uoc_chung_lon_nhat(ll a, ll b)
+ll findGreatestCommonDivisorEuclid(ll a, ll b)
 {
     if (a < 0 || b < 0)
     {
@@ -80,9 +80,9 @@ ll uoc_chung_lon_nhat(ll a, ll b)
     return a;
 }
 
-ll boi_chung_nho_nhat_2(ll a, ll b)
+ll findLeastCommonMultipleEuclid(ll a, ll b)
 {
-    return (a * b) / uoc_chung_lon_nhat(a, b);
+    return (a * b) / findGreatestCommonDivisorEuclid(a, b);
 }
 
 int main()
@@ -94,7 +94,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << boi_chung_nho_nhat_2(a, b) << endl;
+    cout << findLeastCommonMultipleEuclid(a, b) << endl;
 
     time(&end);
     double time_taken = double(end - start);

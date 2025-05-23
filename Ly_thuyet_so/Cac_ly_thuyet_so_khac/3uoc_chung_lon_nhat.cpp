@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ll uoc_chung_lon_nhat_1(ll a, ll b)
+ll findGreatestCommonDivisor(ll a, ll b)
 {
     if (a < 0 || b < 0)
     {
@@ -38,7 +38,7 @@ ll uoc_chung_lon_nhat_1(ll a, ll b)
     return i;
 }
 
-ll uoc_chung_lon_nhat_2(ll a, ll b)
+ll findGreatestCommonDivisorEuclid(ll a, ll b)
 {
     if (a < 0 || b < 0)
     {
@@ -76,7 +76,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << uoc_chung_lon_nhat_2(a, b) << endl;
+    cout << findGreatestCommonDivisorEuclid(a, b) << endl;
 
     time(&end);
     double time_taken = double(end - start);
