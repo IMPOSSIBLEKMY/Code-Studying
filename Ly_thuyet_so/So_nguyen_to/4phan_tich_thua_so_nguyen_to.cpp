@@ -33,8 +33,12 @@ void phan_tich_thua_so_nguyen_to_1(ll n)
             }
         }
     }
+    
+    if(i*i > n)
+    {
+        cout << n << " ";
+    }
 
-    cout << n << " ";
 }
 
 void phan_tich_thua_so_nguyen_to_2(ll n)
@@ -47,13 +51,13 @@ void phan_tich_thua_so_nguyen_to_2(ll n)
 
     ll i = 2;
     int dem = 0;
-
     while (i * i <= n)
     {
         if (n % i == 0)
         {
             dem++;
             n /= i;
+            
             if (n % i != 0)
             {
                 cout << i << "^" << dem << " * ";
@@ -74,7 +78,11 @@ void phan_tich_thua_so_nguyen_to_2(ll n)
     }
 
     dem++;
-    cout << n << "^" << dem << " ";
+    if(i*i > n)
+    {
+        cout << n << "^" << dem << " ";
+    }
+
 }
 
 int main()

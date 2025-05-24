@@ -10,7 +10,7 @@ bool so_thuan_nguyen_to(ll n)
     {
         return 0;
     }
-
+    
     if (n == 2)
     {
         return 1;
@@ -26,15 +26,13 @@ bool so_thuan_nguyen_to(ll n)
 
     while (n)
     {
-        if (n % 10 == 2 || n % 10 == 3 || n % 10 == 5 || n % 10 == 7)
-        {
-            tong += int(n % 10);
-            n /= 10;
-        }
-        else
+        if (n % 10 != 2 && n % 10 != 3 && n % 10 != 5 && n % 10 != 7)
         {
             return 0;
         }
+    
+        tong += int(n % 10);
+        n /= 10;
     }
 
     if (tong % 2 == 0)
