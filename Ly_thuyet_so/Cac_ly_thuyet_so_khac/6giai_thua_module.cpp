@@ -67,8 +67,7 @@ int main()
 
     time(&end);
     double time_taken = double(end - start);
-    cout << "Time taken by program is : " << fixed
-         << time_taken << setprecision(5);
+    cout << "Time taken by program is : " << fixed << time_taken << setprecision(5);
     cout << " sec " << endl;
 
     return 0;
