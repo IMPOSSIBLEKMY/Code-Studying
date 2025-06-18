@@ -7,27 +7,28 @@ using namespace std;
 bool isSmith(ll n)
 {
     ll n1 = n;
-    int tong1 = 0;
-    while(n1 > 0)
+    ll sum1 = 0;
+    while(n1)
     {
-        tong1 += int(n1 % 10);
+        sum1 += n1 % 10;
         n1 /= 10;
     }
-    
+
     ll i = 2;
-    int tong2 = 0;
+    ll sum2 = 0;
     bool isPrime = true;
-    while(i*i <= n)
+
+    while(i * i <= n)
     {
         if(n % i == 0)
         {
-            isPrime = false;
             n /= i;
-            
+            isPrime = false;
+
             ll i1 = i;
-            while(i1 > 0)
+            while(i1)
             {
-                tong2 += int(i1 % 10);
+                sum2 += i1 % 10;
                 i1 /= 10;
             }
         }
@@ -43,20 +44,27 @@ bool isSmith(ll n)
             }
         }
     }
-    
+
     if(isPrime)
     {
         return false;
     }
 
-    while(n > 0)
+    ll i1 = n;
+    while(i1)
     {
-        tong2 += int(n % 10);
-        n /= 10;
+        sum2 += i1 % 10;
+        i1 /= 10;
     }
-    
-    return (tong1 == tong2);
 
+    if(sum2 == sum1)
+    {
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
 }
 
 int main()
