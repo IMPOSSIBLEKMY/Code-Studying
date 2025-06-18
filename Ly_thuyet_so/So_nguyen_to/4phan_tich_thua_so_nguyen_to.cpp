@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void phan_tich_thua_so_nguyen_to_1(ll n)
+void phan_tich_thua_so_nguyen_to_print_style_1(ll n)
 {
     if (n < 2)
     {
@@ -41,7 +41,7 @@ void phan_tich_thua_so_nguyen_to_1(ll n)
 
 }
 
-void phan_tich_thua_so_nguyen_to_2(ll n)
+void phan_tich_thua_so_nguyen_to_print_style_2(ll n)
 {
     if (n < 2)
     {
@@ -94,7 +94,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    phan_tich_thua_so_nguyen_to_2(n);
+    phan_tich_thua_so_nguyen_to_print_style_2(n);
 
     time(&end);
     double time_taken = double(end - start);
