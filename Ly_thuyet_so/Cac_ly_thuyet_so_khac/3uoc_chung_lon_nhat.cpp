@@ -57,11 +57,13 @@ ll findGreatestCommonDivisorEuclid(ll a, ll b)
         return a;
     }
 
+    ll r;
+
     while (b != 0)
     {
-        ll temp = a;
+        r = a % b;
         a = b;
-        b = temp % b;
+        b = r;
     }
 
     return a;
