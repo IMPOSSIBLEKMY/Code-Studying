@@ -7,20 +7,29 @@ using namespace std;
 bool isSphenic(ll n)
 {
     ll i = 2;
-    int dem = 0;
-    while(i*i <= n)
+    int so_mu = 0;
+    int so_dem = 0;
+
+    while(i * i <= n)
     {
         if(n % i == 0)
         {
             n /= i;
-            dem++;
-            if(dem >= 3)
+            so_mu++;
+
+            if(so_mu == 1)
+            {
+                so_dem++;
+            }
+            else 
             {
                 return false;
             }
         }
         else 
         {
+            so_mu = 0;
+
             if(i == 2)
             {
                 i++;
@@ -31,9 +40,31 @@ bool isSphenic(ll n)
             }
         }
     }
-    
-    return true;
 
+    if(n == i)
+    {
+        so_mu++;
+    }
+    else 
+    {
+        so_mu = 1;
+    }
+
+    if(so_mu == 1)
+    {
+        so_dem++;
+    }
+    else
+    {
+        return false;
+    }
+
+    if(so_dem >= 4)
+    {
+        return false;
+    }
+
+    return true;
 }
 
 int main()
