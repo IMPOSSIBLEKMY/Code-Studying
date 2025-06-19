@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cmath>
 
 #define ll long long
 
@@ -19,6 +20,7 @@ bool so_hoan_hao(ll n)
         if (n % i == 0)
         {
             tong += i;
+
             if (n / i != i)
             {
                 tong += n / i;
@@ -28,13 +30,85 @@ bool so_hoan_hao(ll n)
         i++;
     }
 
-    if (tong == n)
+    if (tong + 1 == n)
     {
         return 1;
     }
     else
     {
         return 0;
+    }
+}
+
+bool so_nguyen_to(ll n)
+{
+    if (n <= 1)
+    {
+        return 0;
+    }
+
+    if (n == 2)
+    {
+        return 1;
+    }
+
+    if (n % 2 == 0)
+    {
+        return 0;
+    }
+
+    ll i = 3;
+
+    while (i * i <= n)
+    {
+        if (n % i == 0)
+        {
+            return 0;
+        }
+
+        i += 2;
+    }
+
+    return 1;
+}
+
+bool so_hoan_hao_Euclid(ll n)
+{
+    int p = 1;
+    while(p <= 33)
+    {
+        ll mersenne_prime = pow(2, p) - 1;
+        ll tich = mersenne_prime * (ll)pow(2, p-1);
+
+        if(tich < n)
+        {
+            p++;
+            continue;
+        }
+
+        if(tich == n)
+        {
+            if(so_nguyen_to(p))
+            {
+                if(so_nguyen_to(mersenne_prime))
+                {
+                    return true;
+                }
+                else 
+                {
+                    return false;
+                }
+            }
+            else 
+            {
+                return false;
+            }
+        }
+
+        if(tich > n)
+        {
+            return false;
+        }
     }
 }
 
@@ -47,7 +121,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    if (so_hoan_hao(n))
+    if (so_hoan_hao_Euclid(n))
     {
         cout << "YES" << endl;
     }
