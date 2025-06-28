@@ -33,11 +33,8 @@ void phan_tich_thua_so_nguyen_to_print_style_1(ll n)
             }
         }
     }
-    
-    if(i*i > n)
-    {
-        cout << n << " ";
-    }
+
+    cout << n << endl;
 
 }
 
@@ -50,23 +47,25 @@ void phan_tich_thua_so_nguyen_to_print_style_2(ll n)
     }
 
     ll i = 2;
-    int dem = 0;
+    int so_mu = 0;
+
     while (i * i <= n)
     {
         if (n % i == 0)
         {
-            dem++;
+            so_mu++;
             n /= i;
-            
-            if (n % i != 0)
+
+            if(n % i != 0)
             {
-                cout << i << "^" << dem << " * ";
-                dem = 0;
+                cout << i << "^" << so_mu << " * ";
             }
         }
         else
         {
-            if (i == 2)
+            so_mu = 0;
+            
+            if(i == 2)
             {
                 i++;
             }
@@ -77,12 +76,12 @@ void phan_tich_thua_so_nguyen_to_print_style_2(ll n)
         }
     }
 
-    dem++;
-    if(i*i > n)
+    if(n == i)
     {
-        cout << n << "^" << dem << " ";
+        so_mu++;
     }
 
+    cout << n << "^" << so_mu << endl;
 }
 
 int main()

@@ -44,17 +44,17 @@ bool so_nguyen_to(ll n)
 {
     if (n <= 1)
     {
-        return 0;
-    }
-
-    if (n == 2)
-    {
-        return 1;
+        return false;
     }
 
     if (n % 2 == 0)
     {
-        return 0;
+        return false;
+    }
+
+    if (n == 2)
+    {
+        return true;
     }
 
     ll i = 3;
@@ -63,13 +63,13 @@ bool so_nguyen_to(ll n)
     {
         if (n % i == 0)
         {
-            return 0;
+            return false;
         }
 
         i += 2;
     }
 
-    return 1;
+    return true;
 }
 
 bool so_hoan_hao_Euclid(ll n)
@@ -77,7 +77,7 @@ bool so_hoan_hao_Euclid(ll n)
     int p = 1;
     while(p <= 33)
     {
-        ll mersenne_prime = pow(2, p) - 1;
+        ll mersenne_prime = ((ll)pow(2, p)) - 1;
         ll tich = mersenne_prime * (ll)pow(2, p-1);
 
         if(tich < n)
@@ -88,28 +88,25 @@ bool so_hoan_hao_Euclid(ll n)
 
         if(tich == n)
         {
-            if(so_nguyen_to(p))
-            {
-                if(so_nguyen_to(mersenne_prime))
-                {
-                    return true;
-                }
-                else 
-                {
-                    return false;
-                }
-            }
-            else 
+            if(!so_nguyen_to(p))
             {
                 return false;
             }
-        }
 
-        if(tich > n)
+            if(!so_nguyen_to(mersenne_prime))
+            {
+                return false;
+            }
+
+            return true;
+        }
+        else 
         {
             return false;
         }
     }
+
+    return false;
 }
 
 int main()
