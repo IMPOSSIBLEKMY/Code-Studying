@@ -18,8 +18,8 @@ void phan_tich_thua_so_nguyen_to_print_style_1(ll n)
     {
         if (n % i == 0)
         {
-            cout << i << " ";
             n /= i;
+            cout << i << " ";
         }
         else
         {
