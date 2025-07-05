@@ -4,26 +4,26 @@
 
 using namespace std;
 
-bool isFibonacci(ll n)
+bool isFibonacci(ll value)
 {
-    ll a = 0, b = 1, c;
-
-    if (n < 0)
+    if (value < 0)
     {
-        return 0;
+        return false;
     }
 
-    if (n == 0)
+    if (value == 0)
     {
-        return 1;
+        return true;
     }
 
-    if (n == 1)
+    if (value == 1)
     {
-        return 1;
+        return true;
     }
 
     int i = 3;
+    
+    ll a = 0, b = 1, c;
 
     while (i <= 93)
     {
@@ -31,14 +31,14 @@ bool isFibonacci(ll n)
         a = b;
         b = c;
 
-        if (c == n)
+        if (c == value)
         {
-            return 1;
+            return true;
         }
 
-        if (c > n)
+        if (c > value)
         {
-            return 0;
+            return false;
         }
 
         i++;
