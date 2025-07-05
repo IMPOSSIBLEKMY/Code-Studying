@@ -8,7 +8,7 @@ ll findGreatestCommonDivisor(ll a, ll b)
 {
     if (a < 0 || b < 0)
     {
-        return 0;
+        cout << "Invalid." << endl;
     }
 
     if (a < b)
@@ -18,7 +18,12 @@ ll findGreatestCommonDivisor(ll a, ll b)
         b = temp;
     }
 
-    if (b == 0)
+    if (b == 0 && a == 0)
+    {
+        cout << "Every number except 0." << endl;
+    }
+
+    if (b == 0 && a != 0)
     {
         return a;
     }
@@ -42,7 +47,7 @@ ll findGreatestCommonDivisorEuclid(ll a, ll b)
 {
     if (a < 0 || b < 0)
     {
-        return 0;
+        cout << "Invalid." << endl;
     }
 
     if (a < b)
@@ -52,7 +57,12 @@ ll findGreatestCommonDivisorEuclid(ll a, ll b)
         b = temp;
     }
 
-    if (b == 0)
+    if (b == 0 && a == 0)
+    {
+        cout << "Every number except 0." << endl;
+    }
+
+    if (b == 0 && a != 0)
     {
         return a;
     }
