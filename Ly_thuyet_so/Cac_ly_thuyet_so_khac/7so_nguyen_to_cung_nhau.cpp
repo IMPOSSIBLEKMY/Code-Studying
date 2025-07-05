@@ -23,11 +23,12 @@ ll findGreatestCommonDivisorEuclid(ll a, ll b)
         return a;
     }
 
+    ll r;
     while (b != 0)
     {
-        ll temp = a;
+        r = a % b;
         a = b;
-        b = temp % b;
+        b = r;
     }
 
     return a;
@@ -54,15 +55,15 @@ void printCoPrimeInRange(ll a, ll b)
 
     while(a <= b)
     {
-        ll i = a;
-        while(i <= b)
+        ll b1 = a;
+        while(b1 <= b)
         {
-            if(findGreatestCommonDivisorEuclid(a, i) == 1)
+            if(findGreatestCommonDivisorEuclid(a, b1) == 1)
             {
-                cout << "(" << a << ", " << i << ")" << endl;
+                cout << "(" << a << ", " << b1 << ")" << endl;
             }
             
-            i++;
+            b1++;
         }
         
         a++;
