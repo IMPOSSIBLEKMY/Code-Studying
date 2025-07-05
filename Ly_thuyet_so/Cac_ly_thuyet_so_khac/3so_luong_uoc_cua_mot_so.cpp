@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int uoc_cua_mot_so_cach_thuong(ll n)
+int so_luong_uoc_cua_mot_so_cach_thuong(ll n)
 {
     if(n < 0)
     {
@@ -18,7 +18,7 @@ int uoc_cua_mot_so_cach_thuong(ll n)
 
     ll i = 1;
     
-    int dem = 0;
+    int so_luong_uoc = 0;
 
     while(i * i <= n)
     {
@@ -26,21 +26,25 @@ int uoc_cua_mot_so_cach_thuong(ll n)
         {
             if(n / i == i)
             {
-                dem++;
+                so_luong_uoc++;
             }
             else 
             {
-                dem += 2;
+                so_luong_uoc += 2;
             }
         }
 
         i++;
     }
 
-    return dem;
+    return so_luong_uoc;
 }
 
-int uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(ll n)
+// n = (p1^e1) * (p2^e2) * ...
+// VD: 28 = 2^2 * 7^1
+// so_luong_uoc = (e1 + 1) * (e2 + 1) * ....
+
+int so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(ll n)
 {
     if(n < 0)
     {
@@ -54,7 +58,7 @@ int uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(ll n)
 
     int i = 2;
     int so_mu = 0;
-    int so_uoc = 1;
+    int so_luong_uoc = 1;
 
     while(i * i <= n)
     {
@@ -66,7 +70,7 @@ int uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(ll n)
 
             if(n % i != 0)
             {
-                so_uoc *= (so_mu + 1);
+                so_luong_uoc *= (so_mu + 1);
 
                 so_mu = 0;
             }
@@ -93,9 +97,9 @@ int uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(ll n)
         so_mu = 1;
     }
 
-    so_uoc *= (so_mu + 1);
+    so_luong_uoc *= (so_mu + 1);
 
-    return so_uoc;
+    return so_luong_uoc;
 }
 
 int main()
@@ -107,7 +111,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(n) << endl;
+    cout << so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(n) << endl;
 
     time(&end);
     double time_taken = double(end - start);
