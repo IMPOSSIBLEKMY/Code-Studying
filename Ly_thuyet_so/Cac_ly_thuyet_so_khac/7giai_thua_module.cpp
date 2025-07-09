@@ -4,22 +4,21 @@
 
 using namespace std;
 
-ll nhan_dong_du(ll a, ll b, ll k)
-{
-    return (1ll * (a % k) * (b % k)) % k;
-}
-
 ll giai_thua_chia_du_k(ll n, int k)
 {
     if (n < 0 || k <= 0)
     {
-        return -1;
+        cout << "Invalid." << endl;
     }
 
-    if (k > 1000000007)
+    // 1000000007 = 1e9 + 7
+    // là số nguyên tố
+    // (1e9 + 7) * 2 < int max
+    // (1e9 + 7) ^ 2 < long long max
+
+    if (k >= 1000000008)
     {
-        cout << "Out of range" << endl;
-        return -1;
+        cout << "Out of range k." << endl;
     }
 
     if (n == 0)
@@ -37,17 +36,12 @@ ll giai_thua_chia_du_k(ll n, int k)
         return 0;
     }
 
-    ll kq = n;
+    ll kq = 1;
 
-    while (n - 1 >= 1)
+    while(n != 1)
     {
-        kq = nhan_dong_du(kq, n - 1, k);
-
-        if (kq == 0)
-        {
-            return 0;
-        }
-
+        kq *= (n % k);
+        kq %= k;
         n--;
     }
 
