@@ -79,7 +79,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(n) << endl;
+    cout << so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to_va_module(n) << endl;
 
     time(&end);
     double time_taken = double(end - start);
