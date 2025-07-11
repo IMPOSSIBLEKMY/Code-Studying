@@ -34,7 +34,9 @@ int so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to_va_module(ll n)
 
             if(n % i != 0)
             {
-                so_luong_uoc *= ( (so_mu + 1) % 1000000007 );
+                // (so_mu + 1) % (1e9 + 7) = (so_mu + 1) vì (so_mu + 1) < 1e9 + 7
+                // nên ở trường hợp (so_mu + 1) < 1e9 + 7 thì dùng so_luong_uoc *= (so_mu + 1)
+                so_luong_uoc *= ((so_mu + 1) % 1000000007);
 
                 so_luong_uoc %= 1000000007;
 
@@ -63,7 +65,7 @@ int so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to_va_module(ll n)
         so_mu = 1;
     }
 
-    so_luong_uoc *= ( (so_mu + 1) % 1000000007 );
+    so_luong_uoc *= ((so_mu + 1) % 1000000007);
 
     so_luong_uoc %= 1000000007;
 
