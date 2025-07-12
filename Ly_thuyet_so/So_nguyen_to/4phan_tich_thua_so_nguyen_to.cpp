@@ -59,12 +59,11 @@ void phan_tich_thua_so_nguyen_to_print_style_2(ll n)
             if(n % i != 0)
             {
                 cout << i << "^" << so_mu << " * ";
+                so_mu = 0;
             }
         }
         else
-        {
-            so_mu = 0;
-            
+        {            
             if(i == 2)
             {
                 i++;
@@ -79,6 +78,10 @@ void phan_tich_thua_so_nguyen_to_print_style_2(ll n)
     if(n == i)
     {
         so_mu++;
+    }
+    else 
+    {
+        so_mu = 1;
     }
 
     cout << n << "^" << so_mu << endl;

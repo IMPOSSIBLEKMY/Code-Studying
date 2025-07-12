@@ -71,7 +71,6 @@ int so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to(ll n)
             if(n % i != 0)
             {
                 so_luong_uoc *= (so_mu + 1);
-
                 so_mu = 0;
             }
         }
