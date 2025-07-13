@@ -40,11 +40,20 @@ bool so_nguyen_to(ll p)
 // n! chia được cho p^k với k là số lớn nhất có thể, p là số nguyên tố
 
 // VD: 9! = 1.2.3.4.5.6.7.8.9 và p = 2
+
+//     Hướng đi ban đầu cho bài toán này:
 //     2 = 2^1
 //     4 = 2^2     
 //     6 = 2^1 . 3
 //     8 = 2^3
 //     => k lớn nhất có thể là 7
+
+//     Hướng đi khác cho bài toán này (hướng đi của Legendre):
+//          + Các số nhảy bậc 2: 2 - 4 - 6 - 8   => 4 số
+//          + Các số nhảy bậc 4:     4   -   8   => 2 số
+//          + Các số nhảy bậc 8:             8   => 1 số
+//     Tổng cộng có 7 số nên k lớn nhất có thể là 7
+
 
 ll bac_cua_thua_so_nguyen_to_trong_N_giai_thua(ll n, int p)
 {
