@@ -10,7 +10,7 @@ bool isSphenic(ll n)
 
     int dem = 0;
 
-    while(i * i <= n)
+    while(i <= n / i)
     {
         if(n % i == 0)
         {

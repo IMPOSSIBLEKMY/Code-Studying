@@ -42,9 +42,9 @@ bool so_thuan_nguyen_to(ll n)
 
     ll i = 3;
 
-    while (i * i <= n1)
+    while (i <= n1 / i)
     {
-        if (i * i <= tong)
+        if (i <= tong / i)
         {
             if (tong % i == 0)
             {

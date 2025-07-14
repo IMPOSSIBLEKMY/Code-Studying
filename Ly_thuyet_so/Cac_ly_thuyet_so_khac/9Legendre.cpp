@@ -23,7 +23,7 @@ bool so_nguyen_to(ll p)
 
     ll i = 3;
 
-    while (i * i <= p)
+    while (i <= p / i)
     {
         if (p % i == 0)
         {
@@ -57,16 +57,21 @@ bool so_nguyen_to(ll p)
 
 ll bac_cua_thua_so_nguyen_to_trong_N_giai_thua(ll n, int p)
 {
+    ll so_luong = 0;
+
+    if(n < p)
+    {
+        return so_luong;
+    }
+
     // có 1 cách khác, nhưng cách này p1 càng lớn: 
     // ll p1 = 1;
-    // ll so_luong = 0;
     // while(n/p1 > 1) //tránh tràn số
     // {
     //     p1 *= p;   //để phép tính dưới tính được bước nhảy tiếp theo
     //     so_luong += (n/p1);
     // }
 
-    ll so_luong = 0;
     while(n > 1)
     {
         so_luong += (n/p);

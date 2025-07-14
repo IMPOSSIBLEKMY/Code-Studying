@@ -23,7 +23,7 @@ bool so_nguyen_to(ll n)
 
     ll i = 3;
 
-    while (i * i <= n)
+    while (i <= n / i)
     {
         if (n % i == 0)
         {

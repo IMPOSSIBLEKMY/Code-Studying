@@ -24,7 +24,7 @@ int so_luong_uoc_cua_mot_so_cach_phan_tich_so_nguyen_to_va_module(ll n)
     int so_mu = 0;
     int so_luong_uoc = 1;
 
-    while(i * i <= n)
+    while(i <= n / i)
     {
         if(n % i == 0)
         {

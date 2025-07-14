@@ -14,7 +14,7 @@ bool tat_ca_so_nguyen_to_binh_phuong(int n)
     int i = 2;
     int so_mu = 0;
 
-    while(i * i <= n)
+    while(i <= n / i)
     {
         if(n % i == 0)
         {

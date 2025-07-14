@@ -14,7 +14,7 @@ void phan_tich_thua_so_nguyen_to_print_style_1(ll n)
 
     ll i = 2;
 
-    while (i * i <= n)
+    while (i <= n / i)
     {
         if (n % i == 0)
         {
@@ -49,7 +49,7 @@ void phan_tich_thua_so_nguyen_to_print_style_2(ll n)
     ll i = 2;
     int so_mu = 0;
 
-    while (i * i <= n)
+    while (i <= n / i)
     {
         if (n % i == 0)
         {

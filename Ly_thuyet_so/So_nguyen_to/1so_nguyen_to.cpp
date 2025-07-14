@@ -4,36 +4,39 @@
 
 using namespace std;
 
+// long long prime: 9223372036854775783
+
 bool so_nguyen_to(ll n)
 {
     if (n <= 1)
     {
-        return 0;
+        return false;
     }
 
     if (n == 2)
     {
-        return 1;
+        return true;
     }
 
     if (n % 2 == 0)
     {
-        return 0;
+        return false;
     }
 
     ll i = 3;
 
-    while (i * i <= n)
+    // i * i <= n sẽ bị tràn số vì i * i bằng một số rất lớn, vượt xa long long nếu n là số cận của max long long
+    while (i <= n / i)
     {
         if (n % i == 0)
         {
-            return 0;
+            return false;
         }
 
         i += 2;
     }
 
-    return 1;
+    return true;
 }
 
 int main()

@@ -21,7 +21,7 @@ ll findLeastCommonMultiple(ll a, ll b)
     ll i = 2;
     ll tich = 1;
 
-    while (i * i <= a)
+    while (i <= a / i)
     {
         if (b % i != 0 && a % i != 0)
         {

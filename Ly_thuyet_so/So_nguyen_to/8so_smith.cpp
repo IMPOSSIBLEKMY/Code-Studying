@@ -18,7 +18,7 @@ bool isSmith(ll n)
     ll sum2 = 0;
     bool isPrime = true;
 
-    while(i * i <= n)
+    while(i <= n / i)
     {
         if(n % i == 0)
         {

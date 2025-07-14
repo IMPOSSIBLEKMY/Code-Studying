@@ -24,9 +24,9 @@ void goldbach_conjecture(ll n)
 
     while (a <= b)
     {
-        while (i * i <= b)
+        while (i <= b / i)
         {
-            if (i * i <= a)
+            if (i <= a / i)
             {
                 if (a % i == 0)
                 {

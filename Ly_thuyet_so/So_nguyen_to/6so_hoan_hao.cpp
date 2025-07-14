@@ -15,7 +15,7 @@ bool so_hoan_hao(ll n)
     ll i = 2;
     ll tong = 1;
 
-    while (i * i <= n)
+    while (i <= n / i)
     {
         if (n % i == 0)
         {
@@ -59,7 +59,7 @@ bool so_nguyen_to(ll n)
 
     ll i = 3;
 
-    while (i * i <= n)
+    while (i <= n / i)
     {
         if (n % i == 0)
         {
