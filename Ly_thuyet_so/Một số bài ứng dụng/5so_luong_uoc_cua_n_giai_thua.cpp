@@ -4,10 +4,6 @@
 
 using namespace std;
 
-// n = (p1^e1) * (p2^e2) * ...
-// VD: 28 = 2^2 * 7^1
-// so_luong_uoc = (e1 + 1) * (e2 + 1) * ....
-
 bool so_nguyen_to(int n)
 {
     if(n <= 1)
@@ -64,6 +60,10 @@ ll bac_cua_thua_so_nguyen_to_trong_N_giai_thua(ll n, int p)
     }
     return so_luong;
 }
+
+// n = (p1^e1) * (p2^e2) * ...
+// VD: 28 = 2^2 * 7^1
+// so_luong_uoc = (e1 + 1) * (e2 + 1) * ....
 
 ll so_luong_uoc_cua_n_giai_thua(int n)
 {
