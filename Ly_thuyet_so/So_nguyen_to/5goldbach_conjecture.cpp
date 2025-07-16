@@ -42,13 +42,14 @@ void goldbach_conjecture(ll n)
             i += 2;
         }
 
-        if (i * i > b)
+        if (i > b / i)
         {
             cout << a << " " << b << endl;
         }
 
         a += 2;
         b = n - a;
+        
         i = 3;
     }
 }
