@@ -87,6 +87,42 @@ ll findNthFibonacci(int n)
     return c;
 }
 
+ll closestFibonacciNumber(ll value)
+{
+    ll a = 0, b = 1, c;
+
+    if(value == 0)
+    {
+        return 0;
+    }
+
+    int i = 3;
+
+    while(i <= 93)
+    {
+        c = a + b;
+
+        if(value <= c && value >= b)
+        {
+            if(value - b >= value - c)
+            {
+                return c;
+            }
+            else 
+            {
+                return b;
+            }
+        }
+
+        a = b;
+        b = c;
+
+        i++;
+    }
+    
+    return c;
+}
+
 void printNumbersOfFibonacci(int n)
 {
     ll a = 0, b = 1, c;
@@ -135,14 +171,14 @@ void printNumbersOfFibonacci(int n)
 
 int main()
 {
-    int n;
+    ll n;
     cin >> n;
 
     time_t start, end;
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    printNumbersOfFibonacci(n);
+    cout << closestFibonacciNumber(n) << endl;
 
     time(&end);
     double time_taken = double(end - start);
