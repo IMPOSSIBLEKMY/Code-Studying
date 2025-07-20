@@ -69,7 +69,9 @@ ll so_luong_uoc_cua_n_giai_thua(int n)
 {
     ll so_luong = 1;
 
-    for(int i = 2; i <= n; i++)
+    int i = 2;
+
+    while(i <= n)
     {
         if(so_nguyen_to(i))
         {
@@ -78,6 +80,17 @@ ll so_luong_uoc_cua_n_giai_thua(int n)
             so_luong *= (so_mu + 1) % 1000000007;
 
             so_luong %= 1000000007;
+        }
+        else 
+        {
+            if(i == 2)
+            {
+                i++;
+            }
+            else 
+            {
+                i += 2;
+            }
         }
     }
 
