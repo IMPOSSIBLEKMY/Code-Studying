@@ -4,12 +4,33 @@
 
 using namespace std;
 
-// Đề bài:
-// Viết một chương trình tính tổng các số nguyên từ 1 đến n bằng phương pháp đệ quy.
+// Tính tổng S(n) = 1 + 2 + ... + n bằng đệ quy
 
-ll tong_1(int n)
+// B1: Xác định bài toán con nhỏ nhất làm điểm dừng đệ quy
+// B2: Tìm công thức truy hồi
+
+// S(1) = 1 ---- điểm dừng đệ quy
+// S(2) = 2 + S(1) = 2 + 1 = 3
+// => S(n) = n + S(n - 1) ---- công thức truy hồi
+
+// Số n càng lớn thì số lượng hàm đang gọi trong stack frame ("khung" chứa các hàm đang gọi) tích tụ lại lớn dần:
+// => Dẫn đến tình trạng stack overflow.
+
+// Trong bài tập này, giá trị n dừng lại ở 43321 nếu hàm trả về int => Gọi 43321 hàm.
+// Nếu đặt hàm trả về long long, giá trị n dừng lại ở 32493 => Gọi 32493 hàm:
+// => Do hàm có dung lượng khác nhau, hàm nào dung lượng bộ nhớ ít thì số lượng hàm đang gọi trong stack frame nhiều.
+// => Stack overflow xảy ra nhanh hơn hiện tượng tràn số khi dùng vòng lặp.
+
+int tong_1(int n)
 {
-    if()
+    if(n == 1)
+    {
+        return 1;
+    }
+    else 
+    {
+        return n + tong_1(n - 1);
+    }
 }
 
 int main()
