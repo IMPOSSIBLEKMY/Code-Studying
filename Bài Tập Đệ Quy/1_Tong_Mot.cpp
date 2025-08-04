@@ -9,9 +9,9 @@ using namespace std;
 // B1: Xác định bài toán con nhỏ nhất làm điểm dừng đệ quy
 // B2: Tìm công thức truy hồi
 
-// S(1) = 1 ---- điểm dừng đệ quy
+// S(1) = 1                     ---- điểm dừng đệ quy
 // S(2) = 2 + S(1) = 2 + 1 = 3
-// => S(n) = n + S(n - 1) ---- công thức truy hồi
+// => S(n) = n + S(n - 1)       ---- công thức truy hồi
 
 // Số n càng lớn thì số lượng hàm đang gọi trong stack frame ("khung" chứa các hàm đang gọi) lớn dần:
 // => Dẫn đến tình trạng stack overflow.
