@@ -21,6 +21,12 @@ int nCk(int n, int k)
         return n;
     }
 
+    // Duy trì k nhỏ nhất có thể
+    if(k > n - k)
+    {
+        k = n - k;
+    }
+
     return nCk(n-1, k-1) + nCk(n-1,k);
 }
 
