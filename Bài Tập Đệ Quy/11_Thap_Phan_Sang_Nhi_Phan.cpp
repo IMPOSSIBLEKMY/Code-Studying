@@ -12,6 +12,12 @@ using namespace std;
 
 void thap_phan_sang_nhi_phan(ll n)
 {
+    if(n == 0)
+    {
+        cout << 0;
+        return;
+    }
+
     if(n < 2)
     {
         cout << 1;
@@ -20,7 +26,7 @@ void thap_phan_sang_nhi_phan(ll n)
 
     thap_phan_sang_nhi_phan(n/2);
 
-    cout << n%2;
+    cout << n % 2;
 }
 
 int main()

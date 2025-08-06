@@ -17,29 +17,9 @@ void thap_phan_sang_16(ll n)
         }
         else 
         {
-            switch(n)
-            {
-                case 10:
-                    cout << 'A';
-                    break;
-                case 11:
-                    cout << 'B';
-                    break;
-                case 12:
-                    cout << 'C';
-                    break;
-                case 13:
-                    cout << 'D';
-                    break;
-                case 14:
-                    cout << 'E';
-                    break;
-                case 15:
-                    cout << 'F';
-                    break;
-            }
+            cout << char(n + 55);
         }
-
+        
         return;
     }
 
@@ -51,27 +31,7 @@ void thap_phan_sang_16(ll n)
     }
     else 
     {
-        switch(n % 16)
-        {
-            case 10:
-                cout << 'A';
-                break;
-            case 11:
-                cout << 'B';
-                break;
-            case 12:
-                cout << 'C';
-                break;
-            case 13:
-                cout << 'D';
-                break;
-            case 14:
-                cout << 'E';
-                break;
-            case 15:
-                cout << 'F';
-                break;
-        }
+        cout << char((n % 16) + 55);
     }
 
     return;

@@ -8,9 +8,9 @@ using namespace std;
 
 int tong_4(int n)
 {
-    if(n == 1)
+    if(n == 0)
     {
-        return -1;
+        return 0;
     }
 
     if(n % 2 == 0)

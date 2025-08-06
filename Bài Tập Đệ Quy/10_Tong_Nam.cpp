@@ -8,10 +8,10 @@ using namespace std;
 // Tính S(n) = 1/1 + 1/2 + 1/3 + ... + 1/n bằng đệ quy, lấy kết quả 3 số sau dấu phẩy.
 
 // double result = 123.45678
-// - Nếu dùng setprecision(4), không kèm theo fixed trước đó:
+// - Nếu không kèm theo fixed, dùng setprecision(4):
 //   Cho ra kết quả: 123.4
 
-// - Nếu dùng setprecision(4), kèm theo fixed trước đó:
+// - Nếu kèm theo fixed, dùng setprecision(4):
 //   Cho ra kết quả: 123.4567
 
 double tong_5(int n)
@@ -21,7 +21,7 @@ double tong_5(int n)
         return 1;
     }
 
-    return 1.0/n + tong_5(n-1);
+    return 1/double(n) + tong_5(n-1);
 }
 
 int main()

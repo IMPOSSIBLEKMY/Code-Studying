@@ -8,7 +8,7 @@ using namespace std;
 
 int giai_thua(int n)
 {
-    if(n == 1)
+    if(n == 1 || n == 0)
     {
         return 1;
     }

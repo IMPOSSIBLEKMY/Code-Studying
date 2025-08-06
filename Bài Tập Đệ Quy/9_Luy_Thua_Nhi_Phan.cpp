@@ -19,28 +19,20 @@ ll luy_thua(int a, int b)
         return (long long)a;
     }
 
-    ll result = luy_thua(a, b/2);
+    ll result = luy_thua(a, b/2) % MOD;
     // Nên gọi 1 hàm đệ quy, đừng gọi 2 hàm như: result = luy_thua(a, b/2) * luy_thua(a, b/2).
     // => Tốn dung lượng stack frame.
-
     // Thay vào đó lưu vào 1 biến rồi nhân với chính biến đó.
+    result *= result;
 
-    result = (result % MOD) * (result % MOD);
-
-    if(b % 2 != 0)
+    if(b % 2 == 0)
     {
-        result %= MOD;
-        // ((result % MOD) * (result % MOD)) % MOD
-        result *= a % MOD;
-        // ((result % MOD) * (result % MOD)) % MOD * (a % MOD)
+        return result % MOD;
     }
-
-    return result % MOD;
-    // Nếu b chẵn:
-    // ((result % MOD) * (result % MOD)) % MOD
-
-    // Nếu b lẻ:
-    // (((result % MOD) * (result % MOD)) % MOD * (a % MOD)) % MOD
+    else 
+    {
+        return ( (result % MOD) * (a % MOD) ) % MOD;
+    }
 }
 
 int main()

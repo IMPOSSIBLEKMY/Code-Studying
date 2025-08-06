@@ -25,13 +25,13 @@ bool kiem_tra_chu_so_chan(ll n)
     int digit = (int)(n%10);
 
     // Nếu giữa chừng mà ra false thì không kiểm tra đến số cuối
-    if(digit % 2 == 0)
+    if(digit % 2 != 0)
     {
-        return kiem_tra_chu_so_chan(n/10);
+        return false;
     }
     else 
     {
-        return false;
+        return kiem_tra_chu_so_chan(n/10);
     }
 
 }

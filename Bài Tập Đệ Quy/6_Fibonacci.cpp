@@ -13,8 +13,8 @@ using namespace std;
 //      fibonacci(4) gọi được 5 lần hàm đệ quy 5 = (3 + 1) + 1
 //      fibonacci(5) gọi được 9 lần hàm đệ quy 9 = (5 + 3) + 1
 
-// Công thức dãy Leonardo: L(n) = 2*F(n+1) - 1
 // Do số lượng hàm đệ quy fibonacci tăng rất nhanh nên hàm đệ quy fibonacci chỉ tính được một số n nhỏ nhất định
+// Time complexity là O(2^n)
 
 int fibonacci(int n)
 {

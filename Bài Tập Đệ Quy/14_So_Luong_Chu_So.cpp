@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Tính số lượng chữ số của số n bằng đệ quy
+// Tính số lượng các chữ số của số n bằng đệ quy
 
 int so_luong_chu_so(ll n)
 {
