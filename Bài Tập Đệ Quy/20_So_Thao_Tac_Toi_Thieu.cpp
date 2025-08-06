@@ -10,7 +10,7 @@ using namespace std;
 // Chia cho 3 nếu chia được cho 3. Trừ n cho 1 đơn vị.
 
 // Ta nên xếp thứ tự thao tác theo nhỏ dần: chia cho 3, chia cho 2, trừ 1 đơn vị
-// Số thao tác tối thiểu khi tính bằng đệ quy = số lần gọi hàm đệ quy - 1. Nên khúc cuối không tính +1 vào số thao tác
+// Khúc cuối không tính +1 vào số thao tác
 
 int thao_tac(ll n)
 {
@@ -19,6 +19,8 @@ int thao_tac(ll n)
         // không tính +1
         return 0;
     }
+
+    /* Tư duy chỉ áp dụng cho bài trên thôi:
 
     if(n % 3 == 0)
     {
@@ -32,6 +34,14 @@ int thao_tac(ll n)
     {
         return 1 + thao_tac(n - 1);
     }
+
+    *Tư duy trên chỉ đúng cho bài chia 3, chia 2 hoặc -1. Chứ không áp dụng cho mọi bài.
+    Chúng ta phải kiểm tra 3 trường hợp thao tác cùng 1 lúc. Không như tư duy trên, chọn 1 trong 3.
+    
+    Có nhiều cách ra 1, nhưng có vài cách sử dụng ít thao tác nhất. Truy hết các cách rồi mới kết luận.
+    Giống như cây rẽ nhánh, so sánh trong 1 tầng có cách nào ít thao tác nhất, chọn cách đó. 
+    Các cách bằng nhau thì chọn 1 trong các cách.
+    */
 }
 
 int main()
