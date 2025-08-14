@@ -6,8 +6,10 @@ using namespace std;
 
 // Cho mảng số nguyên A[] gồm 0 <= N <= 1000 phần tử, -10^3 <= A[i] <= 10^3 
 // Nhiệm vụ của bạn là:
-//      Đếm xem trong mảng có bao nhiêu số chẵn, bao nhiêu số lẻ.
-//      Tính tổng các phần tử là số chẵn, tổng các phần tử là số lẻ.
+//      Đếm số phần tử mà chúng có giá trị nhỏ nhất trong dãy.
+
+// VD: A[5] = {1, 2, 1, 3, 5}   
+// => Hai lần xuất hiện phần tử nhỏ nhất là 1.
 
 void dem_chan_le_va_tong_chan_le(int n, int A[])
 {

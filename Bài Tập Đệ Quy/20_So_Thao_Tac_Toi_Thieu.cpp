@@ -9,8 +9,6 @@ using namespace std;
 // Số thao tác tối thiểu để cho n về 1 bằng đệ quy. Ba thao tác cơ bản để cho n về 1 là: chia cho 2 nếu chia được cho 2. 
 // Chia cho 3 nếu chia được cho 3. Trừ n cho 1 đơn vị.
 
-// Khúc cuối không tính +1 vào số thao tác
-
 int min(int a, int b)
 {
     if(a > b)
@@ -27,7 +25,7 @@ int thao_tac(ll n)
 {
     if(n == 1)
     {
-        // không tính +1
+        // khúc cuối không tính +1. Bởi vì n = 1 khi đang ở thao tác thứ 0
         return 0;
     }
 
@@ -53,7 +51,7 @@ int thao_tac(ll n)
     Có nhiều cách ra 1, nhưng có vài cách sử dụng ít thao tác nhất. Truy hết các cách rồi mới kết luận.
     Giống như cây rẽ nhánh: so sánh 3 nhánh trong 1 tầng, từ tầng dưới cùng lên. 
     => Có cách nào ít thao tác nhất, chọn cách đó. Các cách bằng nhau thì chọn 1 trong các cách.
-    => Dùng hàm min.
+    => Dùng hàm min ở mỗi tầng
     */
 
     int thao_tac_1 = 999, thao_tac_2 = 999, thao_tac_3 = 999;
