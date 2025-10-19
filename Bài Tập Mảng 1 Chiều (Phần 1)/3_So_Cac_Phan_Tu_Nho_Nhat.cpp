@@ -4,39 +4,33 @@
 
 using namespace std;
 
-// Cho mảng số nguyên A[] gồm 0 <= N <= 1000 phần tử, -10^3 <= A[i] <= 10^3 
+// Cho mảng số nguyên A[] gồm 1 <= N <= 1000 phần tử, -10^3 <= A[i] <= 10^3 
 // Nhiệm vụ của bạn là:
 //      Đếm số phần tử mà chúng có giá trị nhỏ nhất trong dãy.
 
 // VD: A[5] = {1, 2, 1, 3, 5}   
 // => Hai lần xuất hiện phần tử nhỏ nhất là 1.
 
-void dem_chan_le_va_tong_chan_le(int n, int A[])
+int so_cac_phan_tu_nho_nhat(int n, int A[])
 {
-    int chan = 0, le = 0;
-    ll tong_chan = 0, tong_le = 0;
+    int smallest = 10000;
+    int count = 0;
 
-    int i = 0;
-    while(i <= n - 1)
+    for(int i = 0; i <= n - 1; i++)
     {
-        if(A[i] % 2 == 0)
+        if(A[i] < smallest)
         {
-            chan++;
-            tong_chan += A[i];
-        }
-        else 
-        {
-            le++;
-            tong_le += A[i];
+            smallest = A[i];
+            count = 0;
         }
 
-        i++;
+        if(smallest == A[i])
+        {
+            count++;
+        }
     }
 
-    cout << chan << " " << le << endl;
-    cout << tong_chan << " " << tong_le << endl;
-
-    return;
+    return count;
 }
 
 int main()
@@ -54,7 +48,7 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    dem_chan_le_va_tong_chan_le(n, A);
+    cout << so_cac_phan_tu_nho_nhat(n, A) << endl;
 
     time(&end);
     double time_taken = double(end - start);
