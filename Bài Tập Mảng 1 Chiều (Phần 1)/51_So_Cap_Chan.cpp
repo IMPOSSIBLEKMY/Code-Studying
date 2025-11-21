@@ -21,7 +21,7 @@ int main()
 
         A[i] %= 2;
 
-        N[A[i]]++;
+        N[A[i]]++; //đếm số chẵn và lẻ trong mảng. N[0] là số chẵn, N[1] là số lẻ.
     }
 
     time_t start, end;
