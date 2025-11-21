@@ -47,7 +47,7 @@ int main()
 
         A[i] %= 2;
 
-        N[A[i]]++; //them
+        N[A[i]]++;
     }
 
     time_t start, end;
