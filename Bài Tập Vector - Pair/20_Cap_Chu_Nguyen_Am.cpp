@@ -4,8 +4,8 @@
 
 using namespace std;
 
-// Dòng 1 là N: tổng số cặp dữ liệu chữ in thường - số
-// N dòng tiếp theo mỗi cặp gồm: chữ in thường - số
+// Dòng 1 là N: tổng số cặp dữ liệu.
+// N dòng tiếp theo, mỗi dòng là cặp dữ liệu gồm: chữ in thường - số
 // 1 <= N <= 1000. Số thuộc kiểu dữ liệu là số int.
 
 // Nhiệm vụ của bạn là:
