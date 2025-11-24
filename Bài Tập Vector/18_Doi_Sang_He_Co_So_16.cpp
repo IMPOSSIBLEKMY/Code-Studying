@@ -7,9 +7,13 @@ using namespace std;
 // Dòng 1 là T: số test case 
 // T dòng tiếp theo mỗi dòng là số nguyên N.
 // 1 <= T <= 1000. 0 <= N <= 10^18.
+// Các chữ số trong hệ thập lục phân:
+// 		Từ 0 đến 9 được giữ nguyên.
+// 		Từ 10 đến 15 được ký hiệu lần lượt là 'a', 'b', 'c', 'd', 'e', 'f'.
 
 // Nhiệm vụ của bạn là:
-//    In ra dạng nhị phân của N. Bạn cần in đủ 64 bit của N và triển khai code theo mẫu sau:
+//    In ra dạng thập lục phân (cơ số 16) của N. 
+// 	  Bạn cần in ra kết quả và triển khai code theo mẫu sau:
 //    vector<char> convert_number(long long n)
 //    {  
 //    }
@@ -22,8 +26,8 @@ using namespace std;
 //         {
 //              long long n;
 //              cin >> n;
-//              vector<char> bin = convert_number(n);
-//              for(char x : bin)
+//              vector<char> res = convert_number(n);
+//              for(char x : res)
 //              {
 //                  cout << x;
 //              }
@@ -40,11 +44,11 @@ using namespace std;
 //  13
 //  92
 
-//  => 0000000000000000000000000000000000000000000000000000000000111101
-//     0000000000000000000000000000000000000000000000000000000000010000
-//     0000000000000000000000000000000000000000000000000000000000010000
-//     0000000000000000000000000000000000000000000000000000000000001101
-//     0000000000000000000000000000000000000000000000000000000001011101
+//  => 3d
+//     10
+//     10
+//     d
+//     5c
 
 int main()
 {
