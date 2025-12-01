@@ -9,7 +9,7 @@ using namespace std;
 //     Đếm xem có bao nhiêu giá trị phần tử khác nhau trong mảng.
 
 int N[1000001] = {0}; // Mảng có số lượng phần tử >= 10^6 + 1 để tránh bị tràn khi bỏ trong local. mảng đặt ngoài là mảng global.
-
+						  // Đa số mảng có số lượng phần tử max là 10^7 + 1 thì có thể làm theo cách này.
 int Mang_Danh_Dau_1(int n, int A[])
 {
     int count = 0;

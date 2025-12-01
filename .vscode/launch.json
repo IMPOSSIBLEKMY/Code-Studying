@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Administrator/Videos - Copy/Code-Studying",
-      "program": "c:/Users/Administrator/Videos - Copy/Code-Studying/build/Debug/outDebug",
+      "cwd": "c:/Users/Administrator/Videos/Videos - Copy/Code-Studying",
+      "program": "c:/Users/Administrator/Videos/Videos - Copy/Code-Studying/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

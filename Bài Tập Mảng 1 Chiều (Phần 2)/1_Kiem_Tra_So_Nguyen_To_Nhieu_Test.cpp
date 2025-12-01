@@ -9,27 +9,92 @@ using namespace std;
 //     Kiểm tra từng testcase có phải là số nguyên tố không. Sử dụng phương pháp Sàng Eratosthenes.
 //     Đúng thì in ra "YES", ngược lại thì "NO".
 
+bool prime[1000001] = {false};
+void sang_Eratosthenes_1()
+{
+	for(int i = 2; i <= 1000000; i++)
+	{
+		prime[i] = true;
+	}
+
+	for(int i = 2; i <= 1000000/i; i++)
+	{
+		if(prime[i] == true)
+		{
+			for(int j = i*i; j <= 1000000; j += i)
+			{
+				prime[j] = false;
+			}
+		}
+	}
+}
+
+bool not_prime[1000001] = {false};
+void sang_Eratosthenes_2()
+{
+	not_prime[0] = true;
+	not_prime[1] = true;
+
+	int i = 2;
+	int flag = true;
+	while(i <= 1000000/i)
+	{
+		if(not_prime[i] == false)
+		{
+			for(int j = i*i; j <= 1000000; j += i)
+			{
+				not_prime[j] = true;
+			}
+		}
+
+		if(i < 5)
+		{
+			i += 1;
+		}
+		else 
+		{
+			if(flag == true)
+			{
+				flag = false;
+				i += 2;
+			}
+			else 
+			{
+				flag = true;
+				i += 4;
+			}
+		}
+	}
+}
+
 int main()
 {
-    int n;
-    cin >> n;
+	int T;
+	cin >> T;
 
-    int A[n];
-    int N[2] = {0};
-    for(int i = 0; i <= n - 1; i++)
-    {
-        cin >> A[i];
-
-        A[i] %= 2;
-
-        N[A[i]]++;
-    }
+	int N[T];
+	for(int i = 0; i <= T - 1; i++)
+	{
+		cin >> N[i];
+	}
 
     time_t start, end;
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << (long long)(N[0] * (N[0] - 1)) / 2 + (long long)(N[1] * (N[1] - 1)) / 2 << endl;
+	sang_Eratosthenes_2();
+
+	for(int i = 0; i <= T - 1; i++)
+	{
+		if(not_prime[N[i]] == true)
+		{
+			cout << "NO" << endl;
+		}
+		else 
+		{
+			cout << "YES" << endl;
+		}
+	}
 
     time(&end);
     double time_taken = double(end - start);
