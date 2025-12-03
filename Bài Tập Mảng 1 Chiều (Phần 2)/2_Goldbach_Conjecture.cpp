@@ -8,27 +8,108 @@ using namespace std;
 // Nhiệm vụ của bạn là:
 //     Từng testcase được tạo bởi cặp số nguyên tố p và q. Hãy in ra các cặp số của testcase đó. Sử dụng mảng đánh dấu.
 
+bool not_prime[1000001] = {0};
+
+void sang_Eratosthenes()
+{
+    not_prime[0] = true;
+    not_prime[1] = true;
+
+    int flag = true;
+    int i = 2;
+    while(i <= 1000000 / i)
+    {
+        if(not_prime[i] == false)
+        {
+            for(int j = i * i; j <= 1000000; j += i)
+            {
+                not_prime[j] = true;
+            }
+        }
+
+        if(i <= 4)
+        {
+            i++;
+            continue;
+        }
+
+        switch(flag)
+        {
+            case true:
+                {
+                    flag = false;
+                    i += 2;
+                    break;
+                }
+            case false:
+                {
+                    flag = true;
+                    i += 4;
+                    break;
+                }
+        }
+    }
+}
+
+void print_Goldbach_Conjecture(int n)
+{
+    int flag = true;
+    int i = 2;
+	// kiểm tra từ i = 2 đến n/2 tại vì số goldbach conjecture là tổng giữa 2 số nguyên tố.
+    while(i <= n / 2)
+    {
+        if(not_prime[i] == false && not_prime[n - i] == false)
+        {
+            cout << i << " " << n - i << endl;
+        }
+
+        if(i <= 4)
+        {
+            i++;
+            continue;
+        }
+
+        switch(flag)
+        {
+            case true:
+                {
+                    flag = false;
+                    i += 2;
+                    break;
+                }
+            case false:
+                {
+                    flag = true;
+                    i += 4;
+                    break;
+                }
+        }
+    }
+}
+
 int main()
 {
-    int n;
-    cin >> n;
+    int T;
+    cin >> T;
 
-    int A[n];
-    int N[2] = {0};
-    for(int i = 0; i <= n - 1; i++)
+    int N[T];
+
+    for(int i = 0; i <= T - 1; i++)
     {
-        cin >> A[i];
-
-        A[i] %= 2;
-
-        N[A[i]]++;
+        cin >> N[i];
     }
 
     time_t start, end;
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << (long long)(N[0] * (N[0] - 1)) / 2 + (long long)(N[1] * (N[1] - 1)) / 2 << endl;
+    sang_Eratosthenes();
+
+    for(int i = 0; i <= T - 1; i++)
+    {
+        print_Goldbach_Conjecture(N[i]);
+		cout << endl;
+    }
 
     time(&end);
     double time_taken = double(end - start);
