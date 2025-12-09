@@ -6,7 +6,8 @@ using namespace std;
 
 // Cho T testcase, 1 <= T <= 1000. Mỗi testcase nhập số nguyên chắn N, 4 <= N <= 10^6
 // Nhiệm vụ của bạn là:
-//     Từng testcase được tạo bởi cặp số nguyên tố p và q. Hãy in ra các cặp số của testcase đó. Sử dụng mảng đánh dấu.
+//     Từng testcase được tạo bởi cặp số nguyên tố p và q. Hãy in ra các cặp số của testcase đó. 
+// 	   Sử dụng mảng đánh dấu (phương pháp Sàng Eratosthenes).
 
 bool not_prime[1000001] = {0};
 
