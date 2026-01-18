@@ -19,6 +19,7 @@ int main()
     cin >> n;
 
     int A[n];
+    
     int N[2] = {0};
     for(int i = 0; i <= n - 1; i++)
     {
