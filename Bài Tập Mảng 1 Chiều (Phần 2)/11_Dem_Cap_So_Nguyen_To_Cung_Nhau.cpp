@@ -11,27 +11,55 @@ using namespace std;
 // VD: A[5] = 2 4 8 3 6
 //     => 3 cặp (cặp 2-3, 3-4, 3-8)
 
+int gcd(int a, int b)
+{
+	if(a == 0)
+	{
+		return b;
+	}
+
+	if(b == 0)
+	{
+		return a;
+	}
+
+	while(b != 0)
+	{
+		int r = a % b;
+		a = b;
+		b = r;
+	}
+
+	return a;
+}
+
 int main()
 {
     int n;
     cin >> n;
 
     int A[n];
-    int N[2] = {0};
     for(int i = 0; i <= n - 1; i++)
     {
         cin >> A[i];
-
-        A[i] %= 2;
-
-        N[A[i]]++;
     }
 
     time_t start, end;
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << (long long)(N[0] * (N[0] - 1)) / 2 + (long long)(N[1] * (N[1] - 1)) / 2 << endl;
+	int count = 0;
+	for(int i = 0; i <= n - 2; i++)
+	{
+		for(int j = i + 1; j <= n - 1; j++)
+		{
+			if(gcd(A[i], A[j]) == 1)
+			{
+				count++;
+			}
+		}
+	}
+	cout << count << endl;
 
     time(&end);
     double time_taken = double(end - start);

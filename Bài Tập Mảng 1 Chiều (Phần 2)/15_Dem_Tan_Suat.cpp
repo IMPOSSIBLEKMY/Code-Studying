@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Cho mảng A[] gồm N phần tử, 2 <= N<= 10^6. 0 <= A[i] <= 10^7
+// Cho mảng A[] gồm N phần tử, 2 <= N <= 10^6. 0 <= A[i] <= 10^7
 // Nhiệm vụ của bạn là:
 //     In ra các giá trị của mảng theo giá trị từ nhỏ đến lớn và kèm theo tần suất của nó. Mỗi giá trị in ra 1 lần.
 //     In ra các giá trị của mảng theo thứ tự mảng và kèm theo tần suất của nó. Mỗi giá trị in ra 1 lần.
@@ -22,18 +22,51 @@ using namespace std;
 //     => 4 1
 //     => 8 1
 
+int N[10000001] = {0};
+
+void sort1(int min, int max)
+{
+    for(int i = min; i <= max; i++)
+    {
+        if(N[i] != 0)
+        {
+            cout << i << " " << N[i] << endl;
+        }
+    }
+}
+
+void sort2(int n, int A[])
+{
+    for(int i = 0; i <= n; i++)
+    {
+        if(N[A[i]] != 0)
+        {
+            cout << A[i] << " " << N[A[i]] << endl;
+            N[A[i]] = 0;
+        }
+    }
+}
+
 int main()
 {
     int n;
     cin >> n;
 
     int A[n];
-    int N[2] = {0};
+    int max = 0, min = 10000000;
     for(int i = 0; i <= n - 1; i++)
     {
         cin >> A[i];
 
-        A[i] %= 2;
+        if(A[i] >= max)
+        {
+            max = A[i];
+        }
+
+        if(A[i] <= min)
+        {
+            min = A[i];
+        }
 
         N[A[i]]++;
     }
@@ -42,7 +75,9 @@ int main()
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << (long long)(N[0] * (N[0] - 1)) / 2 + (long long)(N[1] * (N[1] - 1)) / 2 << endl;
+    sort1(min, max);
+
+    sort2(n, A);
 
     time(&end);
     double time_taken = double(end - start);

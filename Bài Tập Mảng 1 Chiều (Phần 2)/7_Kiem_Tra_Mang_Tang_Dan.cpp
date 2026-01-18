@@ -14,21 +14,32 @@ int main()
     cin >> n;
 
     int A[n];
-    int N[2] = {0};
+
     for(int i = 0; i <= n - 1; i++)
     {
         cin >> A[i];
-
-        A[i] %= 2;
-
-        N[A[i]]++;
     }
 
     time_t start, end;
     time(&start);
     ios_base::sync_with_stdio(false);
 
-    cout << (long long)(N[0] * (N[0] - 1)) / 2 + (long long)(N[1] * (N[1] - 1)) / 2 << endl;
+    for(int i = 0; i <= n - 1; i++)
+    {
+        if(i >= 1)
+        {
+            if(A[i] <= A[i - 1])
+            {
+                cout << "NO" << endl;
+                break;
+            }
+        }
+
+        if(i == n - 1)
+        {
+            cout << "YES" << endl;
+        }
+    }
 
     time(&end);
     double time_taken = double(end - start);
